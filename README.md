@@ -3,6 +3,56 @@
 ## 📌 Project Description
 This project demonstrates a simple e-commerce database using MySQL.
 It includes customers, products, orders, and order items tables.
+📌 Project Overview
+This project demonstrates the design and implementation of a simple e-commerce database system using MySQL.
+It covers database creation, table relationships, normalization, and commonly used SQL queries such as JOIN, GROUP BY, WHERE, and aggregate functions.
+🗂️ Database Name
+ecommerce
+🧱 Tables Included
+1️⃣ customers
+Stores customer information.
+id (Primary Key)
+name
+email
+address
+
+2️⃣ products
+Stores product details.
+id (Primary Key)
+name
+price
+description
+discount
+
+3️⃣ orders
+Stores order details.
+id (Primary Key)
+customer_id (Foreign Key)
+order_date
+total_amount
+
+4️⃣ order_items (Normalization)
+
+Stores individual products per order.
+id (Primary Key)
+order_id (Foreign Key)
+product_id (Foreign Key)
+quantity
+price
+
+🔗 Relationships
+One customer can place many orders
+One order can contain many products
+order_items table is used to normalize the database
+
+🧪 SQL Operations Performed
+✔ Database & table creation
+✔ Insert sample data
+✔ JOIN queries
+✔ Aggregate functions (SUM, AVG)
+✔ Filtering using WHERE
+✔ Sorting using ORDER BY
+✔ Normalization using order_items
 
 ##   Queries screenshot
 1.Retrieve all customers who have placed an order in the last 30 days.
