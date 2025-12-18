@@ -1,6 +1,6 @@
 
 -- 1. CREATE DATABASE
-CREATE DATABASE IF NOT EXISTS ecommerce;
+ecommerce;
 USE ecommerce;
 
 
