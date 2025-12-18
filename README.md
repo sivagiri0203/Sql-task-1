@@ -1,13 +1,12 @@
--- =========================================
+
 -- 1. CREATE DATABASE
--- =========================================
 CREATE DATABASE IF NOT EXISTS ecommerce;
 USE ecommerce;
 
 
--- =========================================
+
 -- 2. CREATE CUSTOMERS TABLE
--- =========================================
+
 CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -15,9 +14,9 @@ CREATE TABLE customers (
     address VARCHAR(255)
 );
 
--- =========================================
+
 -- 3. CREATE PRODUCTS TABLE
--- =========================================
+
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -25,9 +24,9 @@ CREATE TABLE products (
     description TEXT
 );
 
--- =========================================
+
 -- 4. CREATE ORDERS TABLE
--- =========================================
+
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
@@ -36,15 +35,14 @@ CREATE TABLE orders (
     FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
 
--- =========================================
 -- 5. INSERT SAMPLE DATA
--- =========================================
+
 
 -- Customers
 INSERT INTO customers (name, email, address) VALUES
-('John Doe', 'john@example.com', 'Chennai'),
-('Jane Smith', 'jane@example.com', 'Bangalore'),
-('Robert Brown', 'robert@example.com', 'Mumbai');
+('master vijay', 'master@example.com', 'Chennai'),
+('ajith kumar', 'ajith@example.com', 'Bangalore'),
+('mrunal thakur', 'mrunal@example.com', 'Mumbai');
 
 -- Products
 INSERT INTO products (name, price, description) VALUES
@@ -59,9 +57,7 @@ INSERT INTO orders (customer_id, order_date, total_amount) VALUES
 (2, CURDATE() - INTERVAL 40 DAY, 100.00),
 (3, CURDATE() - INTERVAL 5 DAY, 180.00);
 
--- =========================================
 -- 6. QUERIES
--- =========================================
 
 -- 1. Customers who placed orders in last 30 days
 SELECT DISTINCT c.*
@@ -100,9 +96,8 @@ SELECT *
 FROM orders
 WHERE total_amount > 150.00;
 
--- =========================================
 -- 7. NORMALIZATION (ORDER ITEMS TABLE)
--- =========================================
+
 
 CREATE TABLE order_items (
     id INT AUTO_INCREMENT PRIMARY KEY,
